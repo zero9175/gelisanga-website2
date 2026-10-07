@@ -1,0 +1,120 @@
+/* ==========================================================
+   About Me page: styles that sit on top of the shared style.css
+   (palette variables, header, buttons, cards and icons come from there)
+   1. Active nav  2. Hero  3. Info card  4. Interests  5. Goals
+   6. Quote  7. Footer  8. Motion & responsive
+   ========================================================== */
+
+/* ---------- 1. ACTIVE NAV ITEM ---------- */
+.nav-list a[aria-current="page"] {
+  padding: 0.35rem 0.95rem; border-radius: 999px;
+  color: var(--cyan-light);
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.45);
+  box-shadow: var(--glow);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* Section headings are centred on this page */
+.about-page .section h2 {
+  text-align: center; letter-spacing: 0.08em;
+  border-image: linear-gradient(90deg, transparent, var(--cyan), transparent) 1;
+}
+
+/* ---------- 2. HERO ---------- */
+.about-hero {
+  padding: clamp(3.5rem, 9vw, 6.5rem) clamp(1rem, 5vw, 3rem) clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 0%, rgba(0, 255, 255, 0.16), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 90% 80%, rgba(0, 139, 139, 0.14), transparent 70%),
+    var(--bg);
+}
+.eyebrow { margin-bottom: 1rem; color: var(--cyan); font: 500 0.95rem var(--font-head); letter-spacing: 0.4em; text-shadow: 0 0 12px rgba(0, 255, 255, 0.5); }
+.about-hero h1 {
+  font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 700; letter-spacing: -0.02em;
+  background: linear-gradient(120deg, #fff 25%, var(--cyan-light) 65%, var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.22));
+}
+.role { margin: 1rem 0 1.5rem; color: var(--cyan-light); font: 500 clamp(1rem, 2.6vw, 1.3rem) var(--font-head); }
+.intro { max-width: 60ch; margin: 0 auto; color: var(--text-2); }
+.glow-line {
+  width: min(420px, 70%); height: 2px; margin: 2.5rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.6);
+}
+
+/* ---------- 3. PERSONAL INFORMATION CARD ---------- */
+.info-card {
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  background: linear-gradient(160deg, var(--bg-2), var(--bg));
+  border: 1px solid var(--border); border-radius: 18px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.12), 0 14px 40px rgba(0, 0, 0, 0.55);
+}
+.info-card h2 { margin-bottom: 2rem; }
+.info-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 3rem; margin: 0; }
+.info-list div { padding-left: 1rem; border-left: 2px solid var(--cyan-dark); transition: border-color 0.3s; }
+.info-list div:hover { border-color: var(--cyan); }
+.info-list dt { color: var(--cyan-light); font: 500 0.8rem var(--font-head); letter-spacing: 0.14em; text-transform: uppercase; }
+.info-list dd { margin: 0.25rem 0 0; }
+
+/* ---------- 4. INTERESTS (flex so the last row stays centred) ---------- */
+.interest-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+.interest-grid .card { flex: 1 1 280px; max-width: 340px; }
+
+/* ---------- 5. GOALS ---------- */
+.goal-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.goal-list li {
+  display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.4rem;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.goal-list li::before {
+  content: ""; flex: none; width: 10px; height: 10px; transform: rotate(45deg);
+  background: var(--cyan); box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+.goal-list li:hover { transform: translateX(6px); border-color: var(--cyan); box-shadow: var(--glow); }
+
+/* ---------- 6. QUOTE ---------- */
+.quote { padding: clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 3rem); text-align: center; background: radial-gradient(ellipse 50% 70% at 50% 50%, rgba(0, 255, 255, 0.09), transparent 70%); }
+.quote blockquote { margin: 0; }
+.quote p {
+  margin: 0; color: var(--cyan-light);
+  font: 700 clamp(2.2rem, 8vw, 5rem)/1.1 var(--font-head); letter-spacing: -0.01em;
+  text-shadow: 0 0 14px rgba(127, 255, 255, 0.55), 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+/* ---------- 7. FOOTER ---------- */
+.mini-footer {
+  padding: 2.25rem 1rem; text-align: center;
+  background: var(--bg-2); border-top: 1px solid var(--border);
+  color: var(--text-2); font-size: 0.95rem;
+}
+.mini-footer p { margin: 0 0 0.25rem; }
+.mini-footer .brand { color: var(--cyan); font: 700 1.15rem var(--font-head); letter-spacing: 0.3em; text-shadow: 0 0 12px rgba(0, 255, 255, 0.5); }
+
+/* ---------- 8. MOTION & RESPONSIVE ---------- */
+.about-hero > * { animation: rise 0.8s ease both; }
+.about-hero > :nth-child(2) { animation-delay: 0.1s; }
+.about-hero > :nth-child(3) { animation-delay: 0.2s; }
+.about-hero > :nth-child(4) { animation-delay: 0.3s; }
+.about-hero > :nth-child(5) { animation-delay: 0.4s; }
+
+/* Sections fade in once as they scroll into view. Content stays visible if JavaScript is off. */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+.about-page .section h2 { animation: none; }
+
+@media (max-width: 760px) {
+  .nav-list a[aria-current="page"] { padding: 0.9rem 0.8rem; border-radius: 10px; }
+  .goal-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .info-list { grid-template-columns: 1fr; gap: 1.25rem; }
+  .eyebrow { letter-spacing: 0.3em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
